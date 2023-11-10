@@ -1,3 +1,5 @@
+# This script creates VPC, Subnets, Internet Gateway (IGW), and Route Table
+
 import boto3
 import time
 

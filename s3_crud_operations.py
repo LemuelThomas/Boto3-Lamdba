@@ -1,3 +1,5 @@
+# This script uses crud operations on S3 bucket of your choice
+
 #  Import boto3 library
 import boto3
 
