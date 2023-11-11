@@ -1,15 +1,20 @@
+#  This script creates, modifies, and deletes an Aurora RDS Database
+
 import boto3
 import time
 
 #  Instantiate a boto3 client for RDS
 rds = boto3.client('rds')
+rdsData = boto3.client('rds-data')
 
 #  User defined variables
 username = 'lemstry'
 password = 'randompassword'
-db_subnet_group = 'vpc-hol'
+db_subnet_group = 'default-vpc-01d545a502cf0fe53'
 db_cluster_id = 'rds-hol-cluster'
-
+your_region = 'us-east-1'
+your_account_id = '231442145948'
+cluster_identifier = 'rds-hol-cluster'
 #  Create DB Cluster
 try:
     response = rds.describe_db_clusters(DBClusterIdentifier=db_cluster_id)
@@ -44,7 +49,7 @@ except rds.exceptions.DBClusterNotFoundFault:
         print("Waiting for the DB Cluster to become available")
         time.sleep(40)
 
-#  Modify the DB Cluster. Update the scaling configuration for the cluster.
+# Modify the DB Cluster. Update the scaling configuration for the cluster.
 response = rds.modify_db_cluster(
         DBClusterIdentifier=db_cluster_id,
         ScalingConfiguration = {
@@ -62,3 +67,4 @@ response = rds.delete_db_cluster(
         SkipFinalSnapshot=True
     )
 print(f"{db_cluster_id} is being deleted.")
+
