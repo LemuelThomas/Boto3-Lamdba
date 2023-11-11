@@ -1,3 +1,20 @@
 # Boto3-Lamdba
-I will be learning how to Use Python with the AWS Boto3 SDK and Automate tasks with AWS Lambda. <br>
-I will be using AWS services including S3, RDS, VPC, and EC2.
+Using Python to automate infrastructure in AWS, Using Lambda to automate tasks in AWS <br>
+Leveraging AWS services including S3, EC2, VPC, and RDS
+## Installation
+Download the latest version of Python 
+```
+https://www.python.org/downloads/
+```
+<br>
+
+Download Pycharm IDE 
+```
+https://www.jetbrains.com/pycharm/download/?section=windows
+```
+<br> 
+
+Install boto3 library by using this command in the pycharm terminal 
+```
+pip install boto3
+```
